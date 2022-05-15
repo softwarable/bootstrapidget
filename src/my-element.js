@@ -1,4 +1,5 @@
-import { html, css, LitElement } from 'lit'
+import { html, css } from 'lit'
+import { BootRoot } from './boot-root';
 
 /**
  * An example element.
@@ -6,11 +7,7 @@ import { html, css, LitElement } from 'lit'
  * @slot - This element has a slot
  * @csspart button - The button
  */
-export class MyElement extends LitElement {
-  createRenderRoot() {
-    return this;
-  }
-
+export class MyElement extends BootRoot {
   static get styles() {
     return css`
       :host {
