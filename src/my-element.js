@@ -7,6 +7,10 @@ import { html, css, LitElement } from 'lit'
  * @csspart button - The button
  */
 export class MyElement extends LitElement {
+  createRenderRoot() {
+    return this;
+  }
+
   static get styles() {
     return css`
       :host {
@@ -40,8 +44,8 @@ export class MyElement extends LitElement {
 
   render() {
     return html`
-      <h1>Hello, ${this.name}!</h1>
-      <button @click=${this._onClick} part="button">
+      <h1>Hello, ${this.name}!!!</h1>
+      <button class="btn btn-primary" @click=${this._onClick} part="button">
         Click Count: ${this.count}
       </button>
       <slot></slot>
